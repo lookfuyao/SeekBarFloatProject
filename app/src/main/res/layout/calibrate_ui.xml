@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:seekbarex="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/calibrate_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:orientation="vertical"
+    android:visibility="visible">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="min:50.555"
+            android:textColor="@color/colorAccent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:text="max:1000.777"
+            android:textColor="@color/colorAccent" />
+
+
+        <TextView
+            android:id="@+id/text_r"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="radius: 50.555"
+            android:textColor="@color/colorAccent" />
+
+        <com.fy.seekbarex.SeekBarFloat
+            android:id="@+id/seekBar"
+            style="@style/calibrate_seek_bar_style"
+            android:layout_below="@id/text_r"
+            seekbarex:seekBarFloat_max="1000.777"
+            seekbarex:seekBarFloat_min="50.555"
+            seekbarex:seekBarFloat_default_value="10"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="min:-0.5"
+            android:textColor="@color/colorAccent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:text="max:0.5"
+            android:textColor="@color/colorAccent" />
+
+
+        <TextView
+            android:id="@+id/text_offset_x"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="offset x: 0.3"
+            android:textColor="@color/colorAccent" />
+
+        <com.fy.seekbarex.SeekBarFloat
+            android:id="@+id/seekBar3"
+            style="@style/calibrate_seek_bar_style"
+            android:layout_below="@id/text_offset_x"
+            seekbarex:seekBarFloat_max="0.5"
+            seekbarex:seekBarFloat_min="-0.5"
+            seekbarex:seekBarFloat_default_value="0.3"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="min:-30.0"
+            android:textColor="@color/colorAccent" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentRight="true"
+            android:text="max:-1.0"
+            android:textColor="@color/colorAccent" />
+
+
+        <TextView
+            android:id="@+id/text_offset_y"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="offset y: -18.0"
+            android:textColor="@color/colorAccent" />
+
+        <com.fy.seekbarex.SeekBarFloat
+            android:id="@+id/seekBar4"
+            style="@style/calibrate_seek_bar_style"
+            android:layout_below="@id/text_offset_y"
+            seekbarex:seekBarFloat_max="-30.0"
+            seekbarex:seekBarFloat_min="-1.0"
+            seekbarex:seekBarFloat_default_value="-18.0"/>
+    </RelativeLayout>
+
+</LinearLayout>
