@@ -7,19 +7,19 @@ Range (-1000.2323232f, 9999.3434343f)
 For example 2:
 Range (500f, 88888f)
 
-Don't call
+Don't call base class methods like:
 ```
 int getMax()
 void setProgress(int progress)
 ...
 ```
-Use under instead
+Use those end with "F" instead
 ```
 float getMaxF()
 void setProgressF(float progress)
+...
 ```
-If you use base class method, you may not set/get right vlaue.
-Use those end with "F"
+If you call base class method, you may not set/get right vlaue.
 
 Capture：
 -----
