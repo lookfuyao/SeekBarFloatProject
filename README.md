@@ -2,10 +2,10 @@
 SeekBarFloatProject  
 =====
 An enhanced version of the seekbar can support negative numbers, floating point numbers (maximum precision is 7 bits).
-For example, 1:
-Range (-1000.2323232f, 9999.3434343f)
-For example 2:
-Range (500f, 88888f)
+For example 1:<br>
+An seekbar Range (-1000.2323232f, 9999.3434343f)<br>
+For example 2:<br>
+An seekbar Range (500f, 88888f)
 
 Don't call base class methods like:
 ```
