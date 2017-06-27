@@ -1,9 +1,9 @@
-package com.fy.seekbar.demo;
+package com.fy.demo;
 
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;

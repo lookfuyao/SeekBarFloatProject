@@ -12,15 +12,16 @@ import android.widget.SeekBar;
  * Created by yao.fu on 6/23/17.
  * Email: lookfuyao@gmail.com
  * An enhanced version of the seekBar can support negative numbers,
- *      floating point numbers (maximum precision is 7 bits).
+ *      floating point numbers (maximum precision is 4 bits).
+ * Max Range(-21474 - 21474)
  * For example, 1:
  * Range (-1000.2323232f, 9999.3434343f)
  * For example 2:
- * Range (500f, 88888f)
+ * Range (500f, 8888f)
  */
 public class SeekBarFloat extends AppCompatSeekBar {
 
-    private float mAccuracy = 8f;
+    private float mAccuracy = 10000f;
     private float mMin = 0f;
     private float mMax = 100f;
 
@@ -70,7 +71,7 @@ public class SeekBarFloat extends AppCompatSeekBar {
      * can be negative number and float number
      */
     public synchronized void setSecondaryProgressF(float secondaryProgress) {
-        int coverProgress = Math.abs((int) ((secondaryProgress - mMin) * 10f * mAccuracy));
+        int coverProgress = Math.abs((int) ((secondaryProgress - mMin) * mAccuracy));
         super.setSecondaryProgress(coverProgress);
     }
 
@@ -123,7 +124,7 @@ public class SeekBarFloat extends AppCompatSeekBar {
      *                 can be negative number and float number
      */
     public synchronized void setProgressF(float progress) {
-        int coverProgress = Math.abs((int) ((progress - mMin) * 10f * mAccuracy));
+        int coverProgress = Math.abs((int) ((progress - mMin) * mAccuracy));
         super.setProgress(coverProgress);
     }
 
@@ -156,7 +157,7 @@ public class SeekBarFloat extends AppCompatSeekBar {
      */
     @TargetApi(Build.VERSION_CODES.N)
     public void setProgressF(int progress, boolean animate) {
-        int coverProgress = Math.abs((int) ((progress - mMin) * 10f * mAccuracy));
+        int coverProgress = Math.abs((int) ((progress - mMin) * mAccuracy));
         super.setProgress(coverProgress, animate);
     }
 
@@ -233,7 +234,7 @@ public class SeekBarFloat extends AppCompatSeekBar {
     public synchronized void setRangeF(float min, float max) {
         mMin = Math.min(min, max);
         mMax = Math.max(min, max);
-        int range = Math.abs((int) ((mMax - mMin) * 10f * mAccuracy));
+        int range = Math.abs((int) ((mMax - mMin) * mAccuracy));
         super.setMax(range);
     }
 
