@@ -5,7 +5,7 @@ Created by yao.fu on 6/23/17.<br>
 Email: lookfuyao@gmail.com<br>
 An enhanced version of the seekBar can support negative numbers,<br>
       floating point numbers (maximum precision is 4 bits).<br>
-`Max Range(-24748 - 24748)`<br>
+`Max Range(-2474 - 2474)`<br>
 For example, 1:<br>
 An SeekBar Range (-1000.2323f, 9999.3434f)<br>
 For example 2:<br>
@@ -33,7 +33,7 @@ How to use:
 -----
 Step1:<br>
 Add compile at your build.gradle:<br>
-compile 'com.fy.seekbarfloat:seekbarfloat:1.0.1'<br>
+compile 'com.fy.seekbarfloat:seekbarfloat:1.0.2'<br>
 <br>
 Step2<br>
 Add SeekBarFloat at xml<br>
