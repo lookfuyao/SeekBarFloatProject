@@ -1,0 +1,107 @@
+
+SeekBarFloatProject  
+=====
+Created by yao.fu on 6/23/17.<br>
+Email: lookfuyao@gmail.com<br>
+An enhanced version of the seekBar can support negative numbers,<br>
+      floating point numbers (maximum precision is 4 bits).<br>
+`Max Range(-24748 - 24748)`<br>
+For example, 1:<br>
+An SeekBar Range (-1000.2323f, 9999.3434f)<br>
+For example 2:<br>
+An SeekBar Range (500f, 8888f)<br>
+
+Don't call base class methods like:
+```
+int getMax()
+void setProgress(int progress)
+...
+```
+Use those end with "F" instead
+```
+float getMaxF()
+void setProgressF(float progress)
+...
+```
+If you call base class method, you may not set/get right vlaue.
+
+Capture：
+-----
+<br>![image](https://github.com/lookfuyao/SeekBarFloatProject/blob/master/resource/2017-06-23_17_00_18.gif)
+
+How to use:
+-----
+Step1:<br>
+Add compile at your build.gradle:<br>
+compile 'com.fy.seekbarfloat:seekbarfloat:1.0.1'<br>
+<br>
+Step2<br>
+Add SeekBarFloat at xml<br>
+```
+<com.fy.seekbarex.SeekBarFloat
+    android:id="@+id/seekBar"
+    style="@style/calibrate_seek_bar_style"
+    android:layout_below="@id/text_r"
+    seekbarex:seekBarFloat_max="1000.777"
+    seekbarex:seekBarFloat_min="50.555"
+    seekbarex:seekBarFloat_default_value="10"/>
+```
+Step3<br>
+Add under code at your Activity<br>
+```
+private SeekBarFloat seekbar;
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    ...
+    seekbar = (SeekBarFloat) findViewById(R.id.seekBar);
+    seekbar.setOnSeekBarChangeListener(onSeekBarChangeListenerEx);
+    ...
+}
+
+private SeekBarFloat.OnSeekBarChangeListener onSeekBarChangeListenerEx = new SeekBarFloat.OnSeekBarChangeListener() {
+    @Override
+    public void onProgressChanged(SeekBarFloat seekBarFloat, float progress, boolean fromUser) {
+        switch (seekBarFloat.getId()) {
+            case R.id.seekBar:
+                radiusTextView.setText("radius: " + progress);
+                break;
+            case R.id.seekBar3:
+                offsetXTextView.setText("offsetX: " + progress);
+                break;
+            case R.id.seekBar4:
+                offsetYTextView.setText("offsetX: " + progress);
+                break;
+        }
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBarFloat seekBarFloat) {
+        Log.d(TAG, "onStartTrackingTouch");
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBarFloat seekBarFloat) {
+        switch (seekBarFloat.getId()) {
+            case R.id.seekBar:
+                radiusTextView.setText("radius : " + seekBarFloat.getProgressF());
+                break;
+            case R.id.seekBar3:
+                offsetXTextView.setText("offsetX : " + seekBarFloat.getProgressF());
+                break;
+            case R.id.seekBar4:
+                offsetYTextView.setText("offsetX : " + seekBarFloat.getProgressF());
+                break;
+        }
+    }
+};
+
+```
+End:
+----
+Feel free to contact me:<br>
+lookfuyao@gmail.com<br>
+or create an Issues
+
+-----------------
+This is my first open source project:)
