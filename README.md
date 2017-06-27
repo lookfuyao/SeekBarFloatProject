@@ -1,11 +1,15 @@
 
 SeekBarFloatProject  
 =====
-An enhanced version of the seekbar can support negative numbers, floating point numbers (maximum precision is 7 bits).
-For example 1:<br>
-An seekbar Range (-1000.2323232f, 9999.3434343f)<br>
+Created by yao.fu on 6/23/17.<br>
+Email: lookfuyao@gmail.com<br>
+An enhanced version of the seekBar can support negative numbers,<br>
+      floating point numbers (maximum precision is 4 bits).<br>
+`Max Range(-24748 - 24748)`<br>
+For example, 1:<br>
+An SeekBar Range (-1000.2323f, 9999.3434f)<br>
 For example 2:<br>
-An seekbar Range (500f, 88888f)
+An SeekBar Range (500f, 8888f)<br>
 
 Don't call base class methods like:
 ```
